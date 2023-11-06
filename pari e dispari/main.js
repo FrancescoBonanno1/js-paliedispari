@@ -1,33 +1,28 @@
-//cominciamo da un prompt per chiederci quale numero sceglieremo
-let numerogiocatore = prompt("Ciao! scegli un numero da 1 a 10");
-console.log(numerogiocatore);
+//cominciamo da un prompt per chiederci quale numero sceglieremo e se è pari o dispari
+let scelta = prompt("ciao, scegli se puntare su un numero pari o dispari")
+let numerogiocatore = prompt("adesso scegli un numero da 1 a 5");
 
-//ok, cosa succede se scegliamo un numero? dovrò sapere se è pari o dispari e se voglio, posso aggiungere se ho rispettato la condizione
+console.log(`hai scelto ${scelta}, ed il numero: ${numerogiocatore}`)
 
-if(numerogiocatore % 2 ==0){
-    let pari = numerogiocatore;
-    console.log(`hai scelto un numero pari ${pari}`);
+//tocca al computer scegliere adesso
+let min = 1;
+let max = 5;
+
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
-else if(numerogiocatore>10){
-alert("EHI! così non vale!");}
+let numeropc = random(min, max);
+console.log(`Il pc ha scelto ${numeropc}`);
 
-else if (numerogiocatore % 3 == 0) {
-    let dispari = numerogiocatore;
-    console.log(`hai scelto un numero dispari ${dispari}`);
+
+let somma = numerogiocatore + numeropc;
+
+if(somma % 2 == 0, scelta =("pari") ){
+ console.log(`ti è andata bene, hai vinto, la somma è ${somma}`);
 }
-
-let numeropc = Math.floor((Math.random() *10)+1)
-console.log(numeropc);
-
-if(numeropc % 2==0){
-console.log(`il pc ha scelto un numero pari ${numeropc}`);}
-
+else if(somma % 3 == 0, scelta =("dispari")) {
+    console.log(`ti è andata bene, hai vinto, la somma è ${somma}`)
+}
 else{
-    console.log(`il pc ha scelto un numero dispari ${numeropc}`);
-}
-
-function somma(numerogiocatore, numeropc) {
-    let risultato = (numerogiocatore + numeropc);
-   console.log(risultato);
-    return risultato;
+    console.log(`Ti è andata male amico, hai perso la scommessa.`)
 }
